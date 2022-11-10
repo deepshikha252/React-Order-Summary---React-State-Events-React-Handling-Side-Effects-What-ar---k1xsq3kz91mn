@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "../styles/App.css";
 import picture from "../assets/illustration-hero.png";
-
+// disabled selected
 const options = [
   { key: 0, plan: "Annual Plan", price: "59.99/year" },
   { key: 1, plan: "6-Month Plan", price: "34.99/6mo" },
@@ -62,7 +62,7 @@ const App = () => {
               </p>
             </div>
             <select onChange={changeHandler} className="select" id="select">
-              <option disabled >
+              <option defaultChecked  >
                 Change
               </option>
               {options.map((option) => (
