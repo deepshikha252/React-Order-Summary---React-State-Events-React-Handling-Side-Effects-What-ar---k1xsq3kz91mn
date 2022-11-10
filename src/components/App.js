@@ -62,7 +62,7 @@ const App = () => {
               </p>
             </div>
             <select onChange={changeHandler} className="select" id="select">
-              <option disabled selected>
+              <option disabled >
                 Change
               </option>
               {options.map((option) => (
