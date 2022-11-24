@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "../styles/App.css";
 import picture from "../assets/illustration-hero.png";
-// disabled selected
+
 const options = [
   { key: 0, plan: "Annual Plan", price: "59.99/year" },
   { key: 1, plan: "6-Month Plan", price: "34.99/6mo" },
@@ -10,16 +10,14 @@ const options = [
 ];
 
 const App = () => {
-  const [currentPlan, setCurrentPlan] = useState({ title: options[0].plan, price: options[0].price });
+  const [currentPlan, setCurrentPlan] = useState();
 
   const changeHandler = (e) => {
-    let older = e.target.value;
-    older = older.split("|");
-    setCurrentPlan({ title: older[0], price: older[1] });
+
   };
 
   const submitHandler = (e) => {
-
+    
   };
 
   return (
@@ -39,7 +37,7 @@ const App = () => {
             any device anywhere you like.
           </p>
         </div>
-        <form onSubmit={submitHandler}>
+        <form onSubmit={}>
           <div className="select-container">
             <div className="music-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
@@ -54,20 +52,16 @@ const App = () => {
               </svg>
             </div>
             <div className="plan">
-              <h4 id="plan-title">
-                {currentPlan.title}
-              </h4>
-              <p id="plan-price">
-                {currentPlan.price}
-              </p>
+              <h4 id="plan-title">Annual Plan</h4>
+              <p id="plan-price">$59.99/year</p>
             </div>
             <select onChange={changeHandler} className="select" id="select">
-              <option disabled selected  >
+              <option disabled selected>
                 Change
               </option>
               {options.map((option) => (
-                <option key={option.key} value={option.plan + "|" + option.price}>
-                  {option.plan}
+                <option key={option.key} value={option.key}>
+                 
                 </option>
               ))}
             </select>
